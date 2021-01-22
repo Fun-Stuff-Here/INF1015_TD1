@@ -2,19 +2,59 @@
 //
 
 #include <iostream>
+#include <string>
+#include <iomanip>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+
+	int total = 0;
+	int i = 0;
+	string motCourt = "";
+	string motLong = "";
+	string sentence;
+	int start=0, end = 0;
+
+
+	cout << "Saisissez une phrase : " << endl;
+	getline(cin, sentence);
+
+	while (end < sentence.size())
+	{
+		//get mot
+		string mot = "";
+		end = sentence.find(" ", start);
+		mot = sentence.substr(start, end-start);
+		start = end + 1;
+
+		//moyenne
+		total += mot.size();
+		i++;
+
+		//petit mot
+		if (i == 1)
+		{
+			motCourt = mot;
+			motLong = mot;
+		}
+		else
+		{
+			if (motCourt.size() > mot.size())
+				motCourt = mot;
+
+			if (motLong.size() < mot.size())
+				motLong = mot;
+		}
+
+	}
+	
+	//calcul moyenne
+	double moyenne = double(total) / i;
+
+	cout << "Le mot le plus court est : "<< motCourt << endl;
+	cout << "Le mot le plus long est : " << motLong << endl;
+	cout << "La longueur moyenne est : " << std::setprecision(2) << moyenne << " lettres" << endl;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
