@@ -10,12 +10,12 @@ int main()
 {
 
 
-	int total = 0;
+	size_t total = 0;
 	int i = 0;
 	string motCourt = "";
 	string motLong = "";
 	string sentence;
-	int start=0, end = 0;
+	size_t start=0, end = 0;
 
 
 	cout << "Saisissez une phrase : " << endl;
