@@ -1,20 +1,59 @@
-// Exercise 4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
 
 #include <iostream>
+#include <vector>
+using namespace std;
+
+int russianMultiplication(int firstNumber, int secondNumber)
+{
+
+    int sum = 0;
+    //Matrix creation
+    vector<int> multiplyMatrix[2];
+    multiplyMatrix[0].push_back(firstNumber);
+    multiplyMatrix[1].push_back(secondNumber);
+
+    while (multiplyMatrix[0].back()!=1)
+    {
+        //c) d) add column 1 with even  value in columnn 0
+        if (multiplyMatrix[0].back() % 2 != 0)
+            sum += multiplyMatrix[1].back();
+        //a) divide 2 for column 0 until 1 and b) multiply column 1 by 2
+        multiplyMatrix[0].push_back(multiplyMatrix[0].back() / 2);
+        multiplyMatrix[1].push_back(multiplyMatrix[1].back() * 2);
+    }
+    //last one is always kept (1%2 !=0) 
+    return sum + multiplyMatrix[1].back();
+
+}
+
+struct test
+{
+    int expected;
+    int result;
+};
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    //initialize tests
+    int success = 0;
+    const int numberOfTest = 3;
+    test tests[numberOfTest] = {
+        {56*78,russianMultiplication(56,78)},
+        {37*129, russianMultiplication(37,129)},
+        {345*987, russianMultiplication(345,987)} 
+    };
+    
+    //run tests
+    for (size_t i = 0; i < numberOfTest; i++)
+    {
+        success += (tests[i].expected == tests[i].result);
+    }
+
+    cout << success<<"/" << numberOfTest <<" tests passents." << endl;
+
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
+
