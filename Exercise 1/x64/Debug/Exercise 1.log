@@ -1,0 +1,4 @@
+﻿  Longueur.cpp
+C:\Users\nicol\source\repos\Nicolas-Depelteau-TP\INF1015_TD1\Exercise 1\Longueur.cpp(28,34): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\nicol\source\repos\Nicolas-Depelteau-TP\INF1015_TD1\Exercise 1\Longueur.cpp(33,22): warning C4267: '+=': conversion from 'size_t' to 'int', possible loss of data
+  Exercise 1.vcxproj -> C:\Users\nicol\source\repos\Nicolas-Depelteau-TP\INF1015_TD1\x64\Debug\Exercise 1.exe
