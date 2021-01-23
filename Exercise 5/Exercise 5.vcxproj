@@ -142,6 +142,13 @@
   <ItemGroup>
     <ClCompile Include="Exercise 5.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="grille1.txt" />
+    <Text Include="grille2.txt" />
+    <Text Include="grille3.txt" />
+    <Text Include="grille4.txt" />
+    <Text Include="grille5.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

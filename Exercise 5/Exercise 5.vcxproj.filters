@@ -19,4 +19,21 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="grille1.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="grille2.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="grille3.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="grille4.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="grille5.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

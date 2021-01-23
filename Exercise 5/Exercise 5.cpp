@@ -1,20 +1,79 @@
-// Exercise 5.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+
 
 #include <iostream>
+#include <fstream>
+using namespace std;
+
+//number of lines in a Tic-Tac-toe board
+const int numberOfLine = 3;
+string getGameState(string board[][numberOfLine])
+{
+    //check rows
+    for (size_t i = 0; i < numberOfLine; i++)
+    {
+        if (board[i][0] == board[i][1] && board[i][0] == board[i][2])
+        {
+            return board[i][0];
+        }
+    }
+
+    //check columns
+    for (size_t i = 0; i < numberOfLine; i++)
+    {
+        if (board[0][i] == board[1][i] && board[0][i] == board[2][i])
+        {
+            return board[0][i];
+        }
+    }
+
+    //check diagonal
+    if ((board[0][0] == board[1][1] && board[0][0] == board[2][2]) || (board[0][2] == board[1][1] && board[1][1] == board[2][0]))
+    {
+        return board[1][1];
+    }
+    else
+    {
+        return "";
+    }
+}
+
+void getGameData(string fileName, string board[][numberOfLine])
+{
+    ifstream boardFile(fileName);
+    for (size_t i = 0; i < numberOfLine; i++)
+    {
+        for (size_t j = 0; j < numberOfLine; j++)
+        {
+            boardFile >> board[i][j];
+        } 
+    }
+
+}
+
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    string fileName = "";
+    cout << "Saisissez un nom de fichier contenant la grille du Tic-Tac-Toe pour déterminer le joueur gagant : " << endl;
+    cin >> fileName;
+
+    string board[numberOfLine][numberOfLine];
+    getGameData(fileName, board);
+    
+
+    string winner = getGameState(board);
+    if (winner == "x")
+    {
+        cout << "Le joueur 1 gagne." << endl;
+    }
+    else if (winner == "o")
+    {
+        cout << "Le joueur 2 gagne." << endl;
+    }
+    else
+    {
+        cout << "Egalite" << endl;
+    }
+
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
