@@ -55,6 +55,6 @@ int main()
 
 	cout << "Le mot le plus court est : "<< motCourt << endl;
 	cout << "Le mot le plus long est : " << motLong << endl;
-	cout << "La longueur moyenne est : " << std::setprecision(2) << moyenne << " lettres" << endl;
+	cout << "La longueur moyenne est : " << fixed << std::setprecision(2) << moyenne << " lettres" << endl;
 }
 

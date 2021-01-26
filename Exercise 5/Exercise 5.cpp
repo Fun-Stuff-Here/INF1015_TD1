@@ -51,18 +51,7 @@ void getGameData(string fileName, string board[][numberOfLine])
 }
 
 
-
-int main()
-{
-    string fileName = "";
-    cout << "Saisissez un nom de fichier contenant la grille du Tic-Tac-Toe pour déterminer le joueur gagant : " << endl;
-    cin >> fileName;
-
-    string board[numberOfLine][numberOfLine];
-    getGameData(fileName, board);
-    
-
-    string winner = getGameState(board);
+void displayWinner(string winner){
     if (winner == "x")
     {
         cout << "Le joueur 1 gagne." << endl;
@@ -75,5 +64,21 @@ int main()
     {
         cout << "Egalite" << endl;
     }
+}
+
+
+int main()
+{
+    string fileName = "";
+    cout << "Saisissez un nom de fichier contenant la grille du Tic-Tac-Toe pour déterminer le joueur gagant : " << endl;
+    cin >> fileName;
+
+    string board[numberOfLine][numberOfLine];
+    getGameData(fileName, board);
+    
+
+    string winner = getGameState(board);
+    displayWinner(winner);
+
 
 }

@@ -1,1 +1,6 @@
-﻿
+﻿  Exercise 3.cpp
+C:\Users\Élizabeth Michaud\Desktop\INF1015_TD1\Exercise 3\Exercise 3.cpp(84,37): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Élizabeth Michaud\Desktop\INF1015_TD1\Exercise 3\Exercise 3.cpp(89,53): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Élizabeth Michaud\Desktop\INF1015_TD1\Exercise 3\Exercise 3.cpp(93,33): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\Élizabeth Michaud\Desktop\INF1015_TD1\Exercise 3\Exercise 3.cpp(40): warning C4701: variable locale 'value' potentiellement non initialisée utilisée
+  Exercise 3.vcxproj -> C:\Users\Élizabeth Michaud\Desktop\INF1015_TD1\x64\Debug\Exercise 3.exe

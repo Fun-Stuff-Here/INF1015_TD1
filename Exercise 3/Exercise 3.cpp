@@ -33,16 +33,16 @@ int getValidValueToAdd()
 		}
 		catch (std::out_of_range)
 		{
-			cout << "Veuillez saisir un nombre valide : ";
+			cout << "Veuillez saisir un nombre entre -2147483648 et 2147483647: ";
 			cin >> inputValue;
 		}
 	}
 	return value;
 }
 
-int getIndexForNewValue(int valueToAdd)
+size_t getIndexForNewValue(int valueToAdd)
 {
-	int indexForValue;
+	size_t indexForValue = myArray.max_size() - 1;
 	for (int i = 0; i < myArray.max_size(); i++)
 	{
 		if (valueToAdd <= myArray[i])
@@ -50,7 +50,6 @@ int getIndexForNewValue(int valueToAdd)
 			indexForValue = i;
 			break;
 		}
-		indexForValue = myArray.max_size() - 1;
 	}
 	return indexForValue;
 }
@@ -70,7 +69,7 @@ void displayArray(int endIndex)
 void insertNewValue(int newValue, int indexNewValue)
 {
 	int nextValue = newValue;
-	int tempValue;
+	int tempValue= 0;
 	for (int i = indexNewValue; i < myArray.max_size(); i++)
 	{
 		tempValue = myArray[i];
