@@ -140,7 +140,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Exercise 5.cpp" />
+    <ClCompile Include="Exercice5.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="grille1.txt" />
